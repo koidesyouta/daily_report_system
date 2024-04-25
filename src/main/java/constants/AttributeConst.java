@@ -4,7 +4,7 @@ package constants;
 
 public enum AttributeConst {
 
-    FLUSHa("flush"),
+    FLUSH("flush"),
 
     MAX_ROW("maxlow"),
     PAGE("page"),
