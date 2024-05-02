@@ -9,7 +9,6 @@ import models.Report;
  * 日報データのDTOモデル⇔Viewモデルの変換を行うクラス
  *
  */
-
 public class ReportConverter {
 
     /**
@@ -27,6 +26,7 @@ public class ReportConverter {
                 rv.getCreatedAt(),
                 rv.getUpdatedAt());
     }
+
     /**
      * DTOモデルのインスタンスからViewモデルのインスタンスを作成する
      * @param r Reportのインスタンス
@@ -34,7 +34,7 @@ public class ReportConverter {
      */
     public static ReportView toView(Report r) {
 
-        if(r == null) {
+        if (r == null) {
             return null;
         }
 
@@ -47,19 +47,22 @@ public class ReportConverter {
                 r.getCreatedAt(),
                 r.getUpdatedAt());
     }
+
     /**
      * DTOモデルのリストからViewモデルのリストを作成する
      * @param list DTOモデルのリスト
      * @return Viewモデルのリスト
      */
-    public static List<ReportView> toViewList(List<Report> list){
+    public static List<ReportView> toViewList(List<Report> list) {
         List<ReportView> evs = new ArrayList<>();
 
         for (Report r : list) {
             evs.add(toView(r));
         }
+
         return evs;
     }
+
     /**
      * Viewモデルの全フィールドの内容をDTOモデルのフィールドにコピーする
      * @param r DTOモデル(コピー先)
@@ -75,4 +78,5 @@ public class ReportConverter {
         r.setUpdatedAt(rv.getUpdatedAt());
 
     }
+
 }
